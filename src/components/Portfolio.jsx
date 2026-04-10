@@ -6,7 +6,7 @@ const projectData = [
   {
     image: "/portfolio-preview.png",
     title: "My Portfolio",
-    tags: ["React", "GSAP", "Three.js", "Framer Motion"],
+    tags: ["JavaScript", "CSS", "HTML"],
     description: "A professional personal portfolio showcasing my skills, projects, and work experience.",
     link: "#",
     github: "#",

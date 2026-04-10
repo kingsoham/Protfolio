@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
 import { FiSend, FiShield } from "react-icons/fi";
 
 const Contact = () => {
@@ -52,7 +53,11 @@ const Contact = () => {
       className="relative w-full min-h-screen bg-[#020202] flex flex-col items-center justify-center font-mono py-20 px-4"
     >
       <div className="z-10 w-full max-w-4xl px-6">
-        <div className="text-center mb-12">
+        <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-12"
+        >
           <h2 className="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none mb-4">
             CONT<span className="text-cyan-500 block sm:inline">ACT</span>
           </h2>
@@ -60,9 +65,12 @@ const Contact = () => {
             <FiShield />
             <span>Protocol: Neural_Gate</span>
           </div>
-        </div>
+        </motion.div>
 
-        <form
+        <motion.form
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
           ref={formRef}
           onSubmit={sendEmail}
           className="bg-white/10 border border-white/20 p-8 md:p-12 space-y-8 rounded-2xl shadow-xl hover:border-cyan-500/30 transition-all"
@@ -111,7 +119,7 @@ const Contact = () => {
               <FiSend className={`text-xl transition-transform ${isSending ? "animate-pulse" : "group-hover:translate-x-1"}`} />
             </button>
           </div>
-        </form>
+        </motion.form>
       </div>
 
       <ToastContainer

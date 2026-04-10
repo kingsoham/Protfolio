@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FiAward, FiBookOpen, FiCode, FiDownload } from "react-icons/fi";
 import { 
   SiReact, 
@@ -82,14 +83,20 @@ export default function About() {
 
                 {/* Cards Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {Aboutdata.map((item) => (
-                        <div key={item.title} className="group p-6 bg-white/10 border border-white/20 hover:border-blue-500/40 transition-all duration-300 rounded-xl">
+                    {Aboutdata.map((item, index) => (
+                        <motion.div 
+                            key={item.title}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.1 }}
+                            className="group p-6 bg-white/10 border border-white/20 hover:border-blue-500/40 transition-all duration-300 rounded-xl"
+                        >
                             <div className="text-blue-500 mb-4 opacity-70 group-hover:opacity-100 transition-opacity">
                                 {item.icon}
                             </div>
                             <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-1">{item.title}</h4>
                             <p className="text-gray-500 text-[11px] leading-relaxed">{item.desc}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
@@ -97,15 +104,21 @@ export default function About() {
                 <div className="space-y-4">
                     <h4 className="text-[10px] font-mono text-gray-500 tracking-[0.3em] uppercase">Core Tech Stack</h4>
                     <div className="flex flex-wrap gap-5">
-                        {Tools.map((tool) => (
-                            <div key={tool.title} className="group relative p-4 bg-black/50 border border-white/5 hover:border-blue-500/50 transition-all rounded-xl flex items-center justify-center cursor-help">
+                        {Tools.map((tool, index) => (
+                            <motion.div 
+                                key={tool.title} 
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: index * 0.05 }}
+                                className="group relative p-4 bg-black/50 border border-white/5 hover:border-blue-500/50 transition-all rounded-xl flex items-center justify-center cursor-help"
+                            >
                                 <div className="text-gray-500 group-hover:text-blue-400 transition-colors">
                                     {tool.icon}
                                 </div>
                                 <span className="absolute -top-10 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[9px] font-mono py-1.5 px-3 rounded-md opacity-0 group-hover:opacity-100 transition-all pointer-events-none z-[70] whitespace-nowrap shadow-xl">
                                     {tool.title}
                                 </span>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>

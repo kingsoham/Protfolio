@@ -85,12 +85,12 @@ export default function Hero() {
         <div className="portfolio-ui center-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none opacity-0 mix-blend-screen z-[1]"></div>
 
         {/* --- HUD ELEMENTS --- */}
-        <div className="portfolio-ui absolute top-28 left-8 md:top-32 md:left-12 z-[60] font-mono text-[10px] text-blue-400 tracking-widest flex flex-col space-y-1.5 pointer-events-none">
+        <div className="portfolio-ui absolute top-28 left-8 md:top-32 md:left-12 z-[60] font-mono text-[10px] text-blue-400 tracking-widest hidden sm:flex flex-col space-y-1.5 pointer-events-none">
             <span className="hud-element opacity-0">&gt; SYSTEM ONLINE</span>
             <span className="hud-element opacity-0">&gt; INITIALIZING PORTFOLIO v2.0</span>
             <span className="hud-element opacity-0">&gt; NEURAL LINK ESTABLISHED</span>
         </div>
-        <div className="portfolio-ui absolute bottom-12 right-8 md:bottom-12 md:right-12 z-[60] font-mono text-[10px] text-gray-600 tracking-widest text-right flex flex-col space-y-1.5 pointer-events-none">
+        <div className="portfolio-ui absolute bottom-12 right-8 md:bottom-12 md:right-12 z-[60] font-mono text-[10px] text-gray-600 tracking-widest text-right hidden sm:flex flex-col space-y-1.5 pointer-events-none">
             <span className="hud-element opacity-0">SECURE SYS_ID: REACT_GSAP</span>
             <span className="hud-element opacity-0">COORD: 34.0522 N / 118.2437 W</span>
         </div>
@@ -130,7 +130,7 @@ export default function Hero() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="mb-4"
                     >
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-bold text-white tracking-[0.1em] uppercase leading-none" style={{ textShadow: "0 0 20px rgba(255,255,255,0.2)" }}>
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold text-white tracking-[0.1em] uppercase leading-none" style={{ textShadow: "0 0 20px rgba(255,255,255,0.2)" }}>
                             {titleText}
                         </h1>
                     </motion.div>
