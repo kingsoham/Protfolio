@@ -8,8 +8,8 @@ const projectData = [
     title: "My Portfolio",
     tags: ["JavaScript", "CSS", "HTML"],
     description: "A professional personal portfolio showcasing my skills, projects, and work experience.",
-    link: "#",
-    github: "#",
+    link: "https://protfolio-1c8t.vercel.app/",
+    github: "https://github.com/kingsoham/Protfolio",
   },
   {
     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800",
